@@ -2,19 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Function to swap strings
-void swap( char *a, char *b)
-{
-	char *temp;
+int lexicographic_sort(const char* a, const  char* b) {
+	{
 
-	*temp = *a;
-	*a = *b;
-	*b = *temp;
+	}
+
 }
 
-
-int lexicographic_sort(const char* a, const char* b) {
-
+void swap(char ** a, char ** b)
+{
+	char *temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 int lexicographic_sort_reverse(const char* a, const char* b) {
@@ -48,7 +47,20 @@ int main()
         *(arr + i) = realloc(*(arr + i), strlen(*(arr + i)) + 1);
     }
   
-    string_sort(arr, n, lexicographic_sort);
+	for(int i = 0; i < n; i++)
+	{
+		lexicographic_sort(arr[i],arr[i+1]);
+	}
+
+
+	for(int i = 0; i < n; i++)
+	{
+		printf("%s",arr[i]);
+	}
+
+
+
+/*    string_sort(arr, n, lexicographic_sort);
     for(int i = 0; i < n; i++)
         printf("%s\n", arr[i]);
     printf("\n");
@@ -67,4 +79,5 @@ int main()
     for(int i = 0; i < n; i++)
         printf("%s\n", arr[i]); 
     printf("\n");
+	*/
 }
